@@ -1,5 +1,5 @@
-conda create -n viewdiff python=3.10 -y
-conda activate viewdiff
+# conda create -n viewdiff python=3.10 -y
+# conda activate viewdiff
 pip install -r requirements.txt
 
 conda install -c fvcore -c iopath -c conda-forge fvcore iopath -y
