@@ -6,7 +6,7 @@ export CO3DV2_DATASET_ROOT=$1
 accelerate launch --mixed_precision="no" --multi_gpu -m viewdiff.train \
 --finetune-config.io.pretrained_model_name_or_path $2 \
 --finetune-config.io.output_dir $3 \
---finetune-config.io.experiment_name "train_teddybear" \
+--finetune-config.io.experiment_name "train_${4}" \
 --finetune-config.training.mixed_precision "no" \
 --finetune-config.training.dataloader_num_workers "0" \
 --finetune-config.training.num_train_epochs "1000" \
@@ -54,7 +54,7 @@ accelerate launch --mixed_precision="no" --multi_gpu -m viewdiff.train \
 --dataset-config.batch.image_height "256" \
 --dataset-config.batch.other_selection "mix" \
 --validation-dataset-config.co3d-root $CO3DV2_DATASET_ROOT \
---validation-dataset-config.category "teddybear" \
+--validation-dataset-config.category $4 \
 --validation-dataset-config.max_sequences "1" \
 --validation-dataset-config.batch.load_recentered \
 --validation-dataset-config.batch.use_blip_prompt \
