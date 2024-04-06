@@ -20,7 +20,7 @@ accelerate launch --mixed_precision="no" --multi_gpu -m viewdiff.train \
 --finetune-config.optimizer.learning_rate "5e-5" \
 --finetune-config.optimizer.vol_rend_learning_rate "1e-3" \
 --finetune-config.optimizer.vol_rend_adam_weight_decay "0.0" \
---finetune-config.optimizer.gradient_accumulation_steps "8" \
+--finetune-config.optimizer.gradient_accumulation_steps "4" \
 --finetune-config.optimizer.max_grad_norm "5e-3" \
 --finetune-config.cross_frame_attention.to_k_other_frames "4" \
 --finetune-config.cross_frame_attention.random_others \
